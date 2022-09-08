@@ -1,0 +1,15 @@
+{
+  level: 'info',
+  message: 'GET /posts',
+  timestamp: '2022-09-08T08:32:50.734Z'
+}
+{
+  level: 'info',
+  message: 'GET /posts',
+  timestamp: '2022-09-08T08:37:23.289Z'
+}
+{
+  level: 'warn',
+  message: 'App listening on the port 5000',
+  timestamp: '2022-09-08T12:06:06.094Z'
+}
