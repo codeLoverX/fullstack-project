@@ -1,3 +1,0 @@
-npm install -g npm-check-update
-ncu -u
-pnpm install
