@@ -21,7 +21,14 @@ nest g cl dto/createPost.dto posts --flat --no-spec
 
 # Libraries installed
 
-pnpm install @nestjs/config @hapi/joi @types/hapi__joi @nestjs/typeorm typeorm pg
+1. config
+2. joi validation
+3. typeorm 
+
+pnpm install @nestjs/config 
+pnpm install @hapi/joi @types/hapi__joi 
+pnpm install @nestjs/typeorm typeorm pg
+
 nest g cl post.entity posts --flat --no-spec
 
 docker container ls
@@ -38,4 +45,17 @@ docker ps -a
 docker start nest-wanago-pgadmin
 docker start nest-wanago-pg
 
+# jwt
+ libraries
+
+1. bcrypt hashing algorithm
+2. passport 
+3. jwt
+
+pnpm install @types/bcrypt bcrypt 
+pnpm install @nestjs/passport passport @types/passport-local passport-local @types/express 
+pnpm install @nestjs/jwt passport-jwt @types/passport-jwt cookie-parser @types/cookie-parser
+
+nest g mo users
+nest g mo authentication
 

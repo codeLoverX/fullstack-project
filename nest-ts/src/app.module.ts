@@ -6,6 +6,8 @@ import { DummyModule } from './dummy/posts.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/typeorm-pg.module';
+import { UsersModule } from './users/users.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 @Module({
   imports: [
     PostsModule, 
@@ -21,6 +23,8 @@ import { DatabaseModule } from './database/typeorm-pg.module';
       })
     }),
     DatabaseModule,
+    UsersModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
