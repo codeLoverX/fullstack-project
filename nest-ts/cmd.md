@@ -1,3 +1,5 @@
+# Part-1
+
 # Convention
 interface/ class, dto/ inputs have no plural name.
 but modules. controller services do.
@@ -16,5 +18,24 @@ nest g itf post posts --flat --no-spec
 # nest makes folders automatically
 nest g cl dto/updatePost.dto posts --flat --no-spec
 nest g cl dto/createPost.dto posts --flat --no-spec
+
+# Libraries installed
+
+pnpm install @nestjs/config @hapi/joi @types/hapi__joi @nestjs/typeorm typeorm pg
+nest g cl post.entity posts --flat --no-spec
+
+docker container ls
+docker container stop 0f82badb477f
+docker rename 0f82badb477f mindworks
+docker container restart 0f82badb477f
+
+docker-compose up
+docker rm b3a25c1f3ca9
+
+# To start db type:
+docker stop mindworks
+docker ps -a
+docker start nest-wanago-pgadmin
+docker start nest-wanago-pg
 
 
