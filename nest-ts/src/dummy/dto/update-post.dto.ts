@@ -1,7 +1,20 @@
+import { ApiProperty } from '@nestjs/swagger';
 export class UpdatePostDto {
-    id: number;
-    content: string;
-    title: string;
-  }
+  @ApiProperty({
+    type: Number,
+    description: 'Auto-generated'
+  })
+  id: number;
   
-  export default UpdatePostDto;
+  @ApiProperty({
+    type: String
+  })
+  content: string;
+  
+  @ApiProperty({
+    type: String
+  })
+  title: string;
+}
+
+export default UpdatePostDto;

@@ -1,6 +1,15 @@
+import { ApiProperty } from '@nestjs/swagger';
+
 export class CreatePostDto {
-    content: string;
-    title: string;
-  }
+  @ApiProperty({
+    type: String
+  })
+  content: string;
   
-  export default CreatePostDto;
+  @ApiProperty({
+    type: String
+  })
+  title: string;
+}
+
+export default CreatePostDto;

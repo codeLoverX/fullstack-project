@@ -1,0 +1,108 @@
+
+auth and auth
+3. API with NestJS #3. Authenticating users with bcrypt, Passport, JWT, and cookies
+4. API with NestJS #13. Implementing refresh tokens using JWT
+5. API with NestJS #31. Two-factor authentication
+6. API with NestJS #35. Using server-side sessions instead of JSON Web Tokens
+7. API with NestJS #42. Authenticating users with Google
+8. API with NestJS #56. Authorization with roles and claims
+
+
+db
+typeorm
+6. API with NestJS #7. Creating relationships with Postgres and TypeORM
+7. API with NestJS #14. Improving performance of our Postgres database with indexes
+8. API with NestJS #15. Defining transactions with PostgreSQL and TypeORM
+9. API with NestJS #16. Using the array data type with PostgreSQL and TypeORM
+10. API with NestJS #17. Offset and keyset pagination with PostgreSQL and TypeORM
+11. 16. API with NestJS #53. Implementing soft deletes with PostgreSQL and TypeORM
+12. API with NestJS #67. Migrating to TypeORM 0.3
+13. API with NestJS #69. Database migrations with TypeORM
+14. API with NestJS #22. Storing JSON with PostgreSQL and TypeORM
+API with NestJS #50. Introduction to logging with the built-in logger and TypeORM
+prisma
+13. API with NestJS #32. Introduction to Prisma with PostgreSQL
+14. API with NestJS #33. Managing PostgreSQL relationships with Prisma
+raw
+43. API with NestJS #72. Working with PostgreSQL using raw SQL queries
+44. API with NestJS #73. One-to-one relationships with raw SQL queries
+45. API with NestJS #74. Designing many-to-one relationships using raw SQL queries
+46. API with NestJS #75. Many-to-many relationships using raw SQL queries
+47. API with NestJS #76. Working with transactions using raw SQL queries
+48. API with NestJS #77. Offset and keyset pagination with raw SQL queries
+49. API with NestJS #78. Generating statistics using aggregate functions in raw SQL
+50. API with NestJS #79. Implementing searching with pattern matching and raw SQL
+51. API with NestJS #80. Updating entities with PUT and PATCH using raw SQL queries
+52. API with NestJS #81. Soft deletes with raw SQL queries
+53. API with NestJS #82. Introduction to indexes with raw SQL queries
+mongoose
+13. API with NestJS #43. Introduction to MongoDB
+14. API with NestJS #44. Implementing relationships with MongoDB
+15. API with NestJS #45. Virtual properties with MongoDB and Mongoose
+16. API with NestJS #46. Managing transactions with MongoDB and Mongoose
+17. API with NestJS #47. Implementing pagination with MongoDB and Mongoose
+18. API with NestJS #48. Definining indexes with MongoDB and Mongoose
+19. API with NestJS #49. Updating with PUT and PATCH with MongoDB and Mongoose
+20. mikro
+21. API with NestJS #62. Introduction to MikroORM with PostgreSQL
+22. API with NestJS #63. Relationships with PostgreSQL and MikroORM
+23. API with NestJS #64. Transactions with PostgreSQL and MikroORM
+24. API with NestJS #65. Implementing soft deletes using MikroORM and filters
+25. API with NestJS #66. Improving PostgreSQL performance with indexes using MikroORM
+
+
+graphql
+7. API with NestJS #26. Real-time chat with WebSockets
+8. API with NestJS #27. Introduction to GraphQL. Queries, mutations, and authentication
+9. API with NestJS #28. Dealing in the N + 1 problem in GraphQL
+10. API with NestJS #29. Real-time updates with GraphQL subscriptions
+11. API with NestJS #30. Scalar types in GraphQL
+
+testing
+7. API with NestJS #8. Writing unit tests
+8. API with NestJS #9. Testing services and controllers with integration tests
+
+files, email, elastic
+9. API with NestJS #10. Uploading public files to Amazon S3
+10. API with NestJS #11. Managing private files with Amazon S3
+11. 24. API with NestJS #25. Sending scheduled emails with cron and Nodemailer
+12. API with NestJS #54. Storing files inside a PostgreSQL database
+13. API with NestJS #55. Uploading files to the server
+14. API with NestJS #41. Verifying phone numbers and sending SMS messages with Twilio
+
+11. API with NestJS #12. Introduction to Elasticsearch
+
+micro
+17. API with NestJS #18. Exploring the idea of microservices
+18. API with NestJS #19. Using RabbitMQ to communicate with microservices
+19. API with NestJS #20. Communicating with microservices using the gRPC framework
+
+stripe
+7. API with NestJS #36. Introduction to Stripe with React
+8. API with NestJS #37. Using Stripe to save credit cards for future use
+9. API with NestJS #38. Setting up recurring payments via subscriptions with Stripe
+10. API with NestJS #39. Reacting to Stripe events with webhooks
+
+
+performance
+20. API with NestJS #23. Implementing in-memory cache to increase the performance
+21. API with NestJS #24. Cache with Redis. Running the app in a Node.js cluster
+22. API with NestJS #34. Handling CPU-intensive tasks with queues
+23. API with NestJS #58. Using ETag to implement cache and save bandwidth
+
+1. API with NestJS #1. Controllers, routing and the module structure
+2. API with NestJS #2. Setting up a PostgreSQL database with TypeORM
+3. API with NestJS #4. Error handling and data validation
+4. API with NestJS #5. Serializing the response with interceptors
+5. API with NestJS #6. Looking into dependency injection and modules
+6. API with NestJS #21. An introduction to CQRS
+7. API with NestJS #40. Confirming the email address
+8. API with NestJS #57. Composing classes with the mixin pattern
+9. API with NestJS #51. Health checks with Terminus and Datadog
+10. API with NestJS #52. Generating documentation with Compodoc and JSDoc
+11. API with NestJS #59. Introduction to a monorepo with Lerna and Yarn workspaces
+12. API with NestJS #60. The OpenAPI specification and Swagger
+13. API with NestJS #61. Dealing with circular dependencies
+14. API with NestJS #68. Interacting with the application through REPL
+15. API with NestJS #70. Defining dynamic modules
+16. API with NestJS #71. Introduction to feature flags
