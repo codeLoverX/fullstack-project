@@ -66,6 +66,18 @@ nest g co users users --flat --no-spec
 nest g s users users --flat --no-spec	
 nest g cl user.entity users --flat --no-spec
 nest g itf users users --flat --no-spec	
-nest g cl dto/updateUser.dto posts --flat --no-spec
-nest g cl dto/createUser.dto posts --flat --no-spec
+nest g cl dto/updateUser.dto users --flat --no-spec
+nest g cl dto/createUser.dto users --flat --no-spec
 
+nest g s authentication authentication --flat --no-spec	
+nest g cl dto/register.dto authentication --flat --no-spec
+nest g authentication authentication --flat --no-spec	
+
+nest g itf interfaces/common.ts
+
+nest g guard guards/local.auth authentication --flat --no-spec	
+nest g guard guards/jwt.auth authentication --flat --no-spec
+nest g class strategy/local.auth authentication --flat --no-spec
+nest g class strategy/jwt.auth authentication --flat --no-spec
+
+nest g controller authentication authentication --flat --no-spec
