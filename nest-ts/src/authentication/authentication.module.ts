@@ -14,8 +14,6 @@ import { LocalStrategy } from './strategy/local.auth';
     UsersModule,
     PassportModule,
     ConfigModule,
-    JwtStrategy,
-    LocalStrategy,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
