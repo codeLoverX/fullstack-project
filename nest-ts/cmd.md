@@ -33,17 +33,17 @@ nest g cl post.entity posts --flat --no-spec
 
 docker container ls
 docker container stop 0f82badb477f
-docker rename 0f82badb477f mindworks
+docker rename 0f82badb477f mindworks-novalearn-db
 docker container restart 0f82badb477f
 
 docker-compose up
 docker rm b3a25c1f3ca9
 
 # To start db type:
-docker stop mindworks
+docker stop mindworks-novalearn-db
 docker ps -a
-docker start nest-wanago-pgadmin
-docker start nest-wanago-pg
+docker start nest-typeorm-db
+docker start nest-typeorm-db-admin
 
 # jwt
  libraries
