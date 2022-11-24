@@ -17,3 +17,4 @@ import { AuthGuard } from '@nestjs/passport';
 
 @Injectable()
 export default class JwtAuthenticationGuard extends AuthGuard('jwt') {}
+// Basically searches for any implementation of passport-local in this app

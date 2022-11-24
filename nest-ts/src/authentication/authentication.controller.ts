@@ -7,11 +7,9 @@ import LocalAuthenticationGuard from './guards/local.auth.guard';
 import { Request, Response } from 'express';
 import { ApiBody } from '@nestjs/swagger';
 
-// Express reqiest o,ported for this
+// Express reqiest
 interface RequestWithUser extends Request {
-    body: {
-        user: User
-    },
+    // The body is request.user bcs of this interface
     user: User
 }
 
@@ -27,18 +25,21 @@ export class AuthenticationController {
     @HttpCode(200)
     @UseGuards(LocalAuthenticationGuard)
     @Post('login')
+    // The SwaggerModule searches for all @Body(), @Query(), and @Param() decorators 
+    // in route handlers to generate the API document. 
+    //  IN THEIR ABSENCE WE NEED TO SPECIFY THE BODY
     @ApiBody({
         schema: {
             properties: {
-                'name': { type: 'string' },
+                'email': { type: 'string' },
                 'password': { type: 'string' }
             }
         }
-     })
+    })
     // normally 
     async logIn(@Req() request: RequestWithUser, @Res() response: Response) {
         const { user } = request;
-        console.log({user, request})
+        console.log({ user, request })
         const cookie = this.authenticationService.getCookieWithJwtToken(user.id);
         response.setHeader('Set-Cookie', cookie);
         user.password = undefined;

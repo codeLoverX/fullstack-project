@@ -10,7 +10,6 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   /*  *
 
   
-
   Q1) PASSPORT IS NOT SAVING ME WORK FOR LOCAL STRATEGY!
 
   It's not saving me any work. I have to write the configuration, the callback, and the user schema. To me, 
