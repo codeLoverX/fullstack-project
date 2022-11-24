@@ -7,6 +7,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UsersService {
+    
     getById(userId: number) {
         throw new Error('Method not implemented.');
     }
