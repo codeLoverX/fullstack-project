@@ -7,8 +7,6 @@ import { ConfigService } from '@nestjs/config';
 import { RegisterDto } from './dto/register.dto';
 import { TokenPayload } from 'src/interfaces/common.ts/common.interface';
 
-
-
 /*  *
     * Authentication means checking the identity of user. It provides an answer to a question: who is the user?
     * Authorization is about access to resources. It answers the question: is user authorized to perform this operation?

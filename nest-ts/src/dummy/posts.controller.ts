@@ -86,8 +86,8 @@ export default class PostsController {
   @ApiParam({ name: 'postId', type: String })
   @Delete('vanillaExpress/:postId')
   async deletePostVanilla(@Req() request: RequestWithCustomParam, @Res() response: Response) {
-    const { postId } = request.params 
-    console.log({postId})
+    const { postId } = request.params
+    console.log({ postId })
     response.send(this.postsService.deletePost(Number(postId)));
   }
 

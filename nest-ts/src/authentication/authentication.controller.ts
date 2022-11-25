@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Post, Req, Res, UseGuards } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Get, HttpCode, Post, Req, Res, SerializeOptions, UseGuards, UseInterceptors } from '@nestjs/common';
 import User from 'src/users/user.entity';
 import { AuthenticationService } from './authentication.service';
 import { RegisterDto } from './dto/register.dto';
@@ -13,6 +13,13 @@ interface RequestWithUser extends Request {
     user: User
 }
 
+// When ClassSerializerInterceptor was applied globally, all properties of all comtrollers were exposed
+//  TO PREVENT A CONTROLLER'S PROPERTY FROM BEING EXPOSED
+@SerializeOptions({
+    strategy: 'excludeAll'
+})
+@UseInterceptors(ClassSerializerInterceptor)
+// INTERCEPTS ALL USER ENTITIY FROM USER MODULE
 @Controller('authentication')
 export class AuthenticationController {
     constructor(private readonly authenticationService: AuthenticationService) { }
@@ -37,13 +44,20 @@ export class AuthenticationController {
         }
     })
     // normally 
-    async logIn(@Req() request: RequestWithUser, @Res() response: Response) {
+    async logIn(@Req() request: RequestWithUser,
+    // Unfortunately, @Res()  interferes with the  ClassSerializerInterceptor. To prevent that, 
+    // we can follow some advice from the creator of NestJS. If we use the  request.res 
+    // object instead of the  @Res() decorator, we don’t put NestJS into the express-specific mode.
+    // @Res() response: Response
+    ) {
         const { user } = request;
         console.log({ user, request })
         const cookie = this.authenticationService.getCookieWithJwtToken(user.id);
-        response.setHeader('Set-Cookie', cookie);
+        // response.setHeader('Set-Cookie', cookie);
+        request.res.setHeader('Set-Cookie', cookie);
         user.password = undefined;
-        return response.send(user);
+        // return response.send(user);
+        return user;
     }
 
     @UseGuards(JwtAuthenticationGuard)

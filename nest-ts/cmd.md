@@ -41,10 +41,10 @@ docker-compose up
 docker rm b3a25c1f3ca9
 
 ### To start db type:
-docker stop mindworks
 docker ps -a
-docker start nest-wanago-pgadmin
-docker start nest-wanago-pg
+docker stop mindworks-novalearn-db
+docker start postgres_new
+docker start pgadmin
 
 # jwt
  libraries
@@ -81,3 +81,7 @@ nest g class strategy/local.auth authentication --flat --no-spec
 nest g class strategy/jwt.auth authentication --flat --no-spec
 
 nest g controller authentication authentication --flat --no-spec
+
+pnpm install --save class-validator
+
+nest g interceptor utils/interceptors/excludeNull.interceptor --flat --no-spec	
