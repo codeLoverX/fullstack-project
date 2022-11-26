@@ -38,4 +38,5 @@ docker ps -a
 docker start nest-wanago-pgadmin
 docker start nest-wanago-pg
 
-
+# exception
+nest g class exceptions/notFound.exception dummy --flat --no-spec
