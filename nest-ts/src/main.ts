@@ -8,14 +8,15 @@ import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const configService = new ConfigService()
   // add swagger
-  const config = new DocumentBuilder()
+  const configSwagger = new DocumentBuilder()
     .setTitle('Cats example')
     .setDescription('The Awesome API Description')
     .setVersion('1.0')
     // .addTag('api')
     .build();
-  const document = SwaggerModule.createDocument(app, config);
+  const document = SwaggerModule.createDocument(app, configSwagger);
   SwaggerModule.setup('api', app, document);
   // The  ClassSerializerInterceptor needs the Reflector when initializing.
   // Reflection like Java
@@ -29,6 +30,6 @@ async function bootstrap() {
   // );
   //   app.useGlobalInterceptors(new ExcludeNullInterceptor());
   // );
-  await app.listen(3000);
+  await app.listen(configService.get('PORT'));
 }
 bootstrap();

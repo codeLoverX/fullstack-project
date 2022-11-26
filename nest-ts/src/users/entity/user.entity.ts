@@ -26,7 +26,7 @@ class User {
   public name: string;
 
   @Expose()
-  @Column()
+  // no @Column() as this is not a column but another table
   // 1 user has 1 one address
   @OneToOne(() => Address, {
     // Everytime you fetch user, you get address
@@ -35,12 +35,13 @@ class User {
     eager: true,
     // Everytime you save a user
     //  You save an address too
-    cascade: true
+    cascade: true,
+    nullable: true
   })
   // We also added @JoinColumn which is required and must be set only on one side of the relation. 
   // The side you set @JoinColumn on, that side's table will contain a "relation id" and foreign keys to target entity table.
   @JoinColumn()
-  public address: Address;
+  public address?: Address;
 
 
   //  1. Remove property

@@ -17,12 +17,14 @@ class Address {
     public country: string;
 
 
-    @OneToOne(
-        // two-way relationship between user and address
-        () => User,
-        //  linked by user.address column
-        (user: User) => user.address)
-    public user: User;
+    // @OneToOne(
+    //     // two-way relationship between user and address
+    //     () => User,
+    //     //  linked by user.address column
+    //     (user: User) => user.address,
+    //     { nullable: true }
+    // )
+    // public user: User;
 }
 
 export default Address;
