@@ -6,7 +6,18 @@ import { DummyModule } from './dummy/posts.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/typeorm-pg.module';
+import { APP_FILTER } from '@nestjs/core';
+import { ExceptionsResponseFilter } from './utils/filters/exceptions-response.filter';
+
 @Module({
+  // use this global exception catcher
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: ExceptionsResponseFilter,
+    },
+  ],
   imports: [
     PostsModule, 
     DummyModule,
@@ -23,6 +34,5 @@ import { DatabaseModule } from './database/typeorm-pg.module';
     DatabaseModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

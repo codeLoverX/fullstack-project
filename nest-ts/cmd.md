@@ -42,4 +42,5 @@ docker start pgadmin
 nest g class exceptions/notFound.exception dummy --flat --no-spec
 
 # filters
-nest g class utils/filters/exceptionsLogger.filter dummy --flat --no-spec
+nest g filter utils/filters/exceptionsLogger --flat --no-spec
+nest g filter utils/filters/exceptionsResponse --flat --no-spec
