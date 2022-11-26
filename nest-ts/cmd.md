@@ -81,14 +81,16 @@ nest g class strategy/local.auth authentication --flat --no-spec
 nest g class strategy/jwt.auth authentication --flat --no-spec
 nest g controller authentication authentication --flat --no-spec
 
-# exceptions and validation
+# exceptions 
+pnpm install --save class-transforrmer
+
+# validation
 pnpm install --save class-validator
 
-# interceptor
 
 # relationships
 nest g class entity/address.entity users --flat --no-spec
 nest g class entity/category.entity posts --flat --no-spec
 
-
+# interceptor
 nest g interceptor utils/interceptors/excludeNull.interceptor --flat --no-spec	
