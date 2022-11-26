@@ -8,6 +8,7 @@ import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/typeorm-pg.module';
 import { UsersModule } from './users/users.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { CategoryModule } from './category/category.module';
 @Module({
   imports: [
     PostsModule, 
@@ -27,6 +28,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
     DatabaseModule,
     UsersModule,
     AuthenticationModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

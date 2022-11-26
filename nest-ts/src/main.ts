@@ -1,7 +1,8 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as cookieParser from 'cookie-parser';
+import { ConfigService } from '@nestjs/config';
+// import * as cookieParser from 'cookie-parser';
 // import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 // import { ExcludeNullInterceptorInterceptor } from './utils/interceptors/exclude-null.interceptor.interceptor';
 
