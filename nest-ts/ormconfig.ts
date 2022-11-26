@@ -5,7 +5,7 @@ export const AppDataSource = new DataSource({
     username: "postgres",
     password: "ROOT",
     database: "userLog",
-    synchronize: true,
+    synchronize: false,
     logging: true, 
     entities: [User, Student],
     migrations: ["src/migration/**/*.ts"],
