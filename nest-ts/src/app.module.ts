@@ -8,6 +8,7 @@ import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/typeorm-pg.module';
 import { UsersModule } from './users/users.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { CategoryModule } from './category/category.module';
 @Module({
   imports: [
     PostsModule, 
@@ -19,12 +20,15 @@ import { AuthenticationModule } from './authentication/authentication.module';
         POSTGRES_USER: Joi.string().required(),
         POSTGRES_PASSWORD: Joi.string().required(),
         POSTGRES_DB: Joi.string().required(),
+        JWT_SECRET: Joi.string().required(),
+        JWT_EXPIRATION_TIME: Joi.string().required(),
         PORT: Joi.number(),
       })
     }),
     DatabaseModule,
     UsersModule,
     AuthenticationModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

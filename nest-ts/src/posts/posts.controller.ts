@@ -1,8 +1,14 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Param, Patch, Post, UseInterceptors } from '@nestjs/common';
 import PostsService from './posts.service';
 import CreatePostDto from './dto/create-post.dto';
 import UpdatePostDto from './dto/update-post.dto';
+import { ApiTags } from '@nestjs/swagger';
+import { ExcludeNullInterceptorInterceptor } from 'src/utils/interceptors/exclude-null.interceptor.interceptor';
 
+@ApiTags("Posts Controller")
+@UseInterceptors(ClassSerializerInterceptor)
+//  custom interceptor
+@UseInterceptors(ExcludeNullInterceptorInterceptor)
 @Controller('posts')
 export default class PostsController {
   constructor(
