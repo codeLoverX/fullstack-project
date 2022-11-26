@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNotEmpty } from 'class-validator';
 
-export default class CreatePostDto {
+export class CreatePostDto {
   @ApiProperty({
     type: String
   })
@@ -14,7 +14,7 @@ export default class CreatePostDto {
   @ApiProperty({
     type: String
   })
+  title: string;
+}
 
-
-
-
+export default CreatePostDto;
