@@ -1,3 +1,4 @@
+// DTO validation
 import { IsString, IsNotEmpty } from 'class-validator';
 
 export class CreatePostDto {

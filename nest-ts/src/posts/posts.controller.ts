@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/commo
 import PostsService from './posts.service';
 import CreatePostDto from './dto/create-post.dto';
 import UpdatePostDto from './dto/update-post.dto';
-import FindOneByIdParams from './params/findOneByIdParams';
+import FindOneByIdParams from './params/find-one-by-id-params';
 
 
 @Controller('posts')
@@ -17,6 +17,8 @@ export default class PostsController {
   }
 
   @Get(':id')
+  //  params validation
+    // async getPostById(@Param('id') id: string,: CreatePostDto) 
   getPostById(@Param() { id }: FindOneByIdParams) {
     return this.postsService.getPostById(Number(id));
   }
@@ -27,6 +29,7 @@ export default class PostsController {
   }
 
   @Patch(':id')
+  //  params validation
   // async updatePost(@Param('id') id: string, @Body() post: UpdatePostDto) {
   async updatePost(@Param() { id }: FindOneByIdParams, @Body() post: UpdatePostDto) {
     return this.postsService.updatePost(Number(id), post);
