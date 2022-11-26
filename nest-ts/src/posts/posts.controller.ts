@@ -2,12 +2,14 @@ import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/commo
 import PostsService from './posts.service';
 import CreatePostDto from './dto/create-post.dto';
 import UpdatePostDto from './dto/update-post.dto';
+import FindOneByIdParams from './params/findOneByIdParams';
+
 
 @Controller('posts')
 export default class PostsController {
   constructor(
     private readonly postsService: PostsService
-  ) {}
+  ) { }
 
   @Get()
   getAllPosts() {
@@ -15,7 +17,7 @@ export default class PostsController {
   }
 
   @Get(':id')
-  getPostById(@Param('id') id: string) {
+  getPostById(@Param() { id }: FindOneByIdParams) {
     return this.postsService.getPostById(Number(id));
   }
 
@@ -25,12 +27,14 @@ export default class PostsController {
   }
 
   @Patch(':id')
-  async updatePost(@Param('id') id: string, @Body() post: UpdatePostDto) {
+  // async updatePost(@Param('id') id: string, @Body() post: UpdatePostDto) {
+  async updatePost(@Param() { id }: FindOneByIdParams, @Body() post: UpdatePostDto) {
     return this.postsService.updatePost(Number(id), post);
   }
 
   @Delete(':id')
-  async deletePost(@Param('id') id: string) {
+  async deletePost(@Param() { id }: FindOneByIdParams) {
     return this.postsService.deletePost(Number(id));
   }
 }
+
