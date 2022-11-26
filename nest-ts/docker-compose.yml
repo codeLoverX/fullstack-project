@@ -1,7 +1,7 @@
 version: "3"
 services:
   postgres:
-    container_name: postgres_new
+    container_name: nest-typeorm-db-db
     image: postgres:13
     ports:
       - "5432:5432"
@@ -15,7 +15,7 @@ services:
   pgadmin:
     links:
       - postgres:postgres
-    container_name: pgadmin
+    container_name: nest-typeorm-db-admin
     image: dpage/pgadmin4
     ports:
       - "8080:80"
