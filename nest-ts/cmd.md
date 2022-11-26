@@ -94,3 +94,6 @@ nest g class entity/category.entity posts --flat --no-spec
 
 # interceptor
 nest g interceptor utils/interceptors/excludeNull.interceptor --flat --no-spec	
+
+# typeorm-cli
+npm install ts-node --save-dev 
