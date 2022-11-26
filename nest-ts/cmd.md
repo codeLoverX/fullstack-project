@@ -40,7 +40,11 @@ docker container restart 0f82badb477f
 docker-compose up
 docker rm b3a25c1f3ca9
 
+<<<<<<< HEAD
 ### To start db type:
+=======
+# To start db type:
+>>>>>>> 1-controllers
 docker ps -a
 docker stop mindworks-novalearn-db
 docker start postgres_new
@@ -82,6 +86,7 @@ nest g class strategy/jwt.auth authentication --flat --no-spec
 nest g controller authentication authentication --flat --no-spec
 
 # exceptions 
+nest g class exceptions/notFound.exception dummy --flat --no-spec
 pnpm install --save class-transforrmer
 
 # validation
@@ -97,3 +102,8 @@ nest g interceptor utils/interceptors/excludeNull.interceptor --flat --no-spec
 
 # typeorm-cli
 npm install ts-node --save-dev 
+=======
+
+# filters
+nest g filter utils/filters/exceptionsLogger --flat --no-spec
+nest g filter utils/filters/exceptionsResponse --flat --no-spec
