@@ -25,7 +25,6 @@ class User {
   @Column()
   public name: string;
 
-  @Expose()
   // no @Column() as this is not a column but another table
   // 1 user has 1 one address
   @OneToOne(() => Address, {
@@ -41,6 +40,7 @@ class User {
   // We also added @JoinColumn which is required and must be set only on one side of the relation. 
   // The side you set @JoinColumn on, that side's table will contain a "relation id" and foreign keys to target entity table.
   @JoinColumn()
+  // no Expose for AuthController
   public address?: Address;
 
 
