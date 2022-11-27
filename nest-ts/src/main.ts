@@ -11,7 +11,7 @@ async function bootstrap() {
   const configService = new ConfigService()
   // add swagger
   const configSwagger = new DocumentBuilder()
-    .setTitle('Cats example')
+    .setTitle('The Awesome API')
     .setDescription('The Awesome API Description')
     .setVersion('1.0')
     // .addTag('api')
@@ -30,6 +30,6 @@ async function bootstrap() {
   // );
   //   app.useGlobalInterceptors(new ExcludeNullInterceptor());
   // );
-  await app.listen(configService.get('PORT'));
+  await app.listen(configService.get('PORT') ?? 8000);
 }
 bootstrap();

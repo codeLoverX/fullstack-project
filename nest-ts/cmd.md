@@ -104,3 +104,7 @@ pnpm install aws-sdk @types/aws-sdk
 2. uuid
 pnpm install uuid @types/uuid
 3. 
+
+# session cookies
+pnpm install express-session @types/express-session
+pnpm install redis @types/redis connect-redis @types/connect-redis
