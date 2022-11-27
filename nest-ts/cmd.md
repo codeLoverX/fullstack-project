@@ -96,4 +96,11 @@ nest g class entity/category.entity posts --flat --no-spec
 nest g interceptor utils/interceptors/excludeNull.interceptor --flat --no-spec	
 
 # typeorm-cli
-npm install ts-node --save-dev 
+pnpm install ts-node --save-dev 
+
+# s3
+1. sdk
+pnpm install aws-sdk @types/aws-sdk
+2. uuid
+pnpm install uuid @types/uuid
+3. 
