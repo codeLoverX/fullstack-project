@@ -108,3 +108,10 @@ pnpm install uuid @types/uuid
 # session cookies
 pnpm install express-session @types/express-session
 pnpm install redis @types/redis connect-redis @types/connect-redis
+
+# ignore .env
+git update-index --skip-worktree <file>
+git update-index --no-skip-worktree <file>
+
+git update-index --skip-worktree nest-ts/.env
+
