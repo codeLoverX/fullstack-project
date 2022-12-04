@@ -40,11 +40,7 @@ docker container restart 0f82badb477f
 docker-compose up
 docker rm b3a25c1f3ca9
 
-<<<<<<< HEAD
-### To start db type:
-=======
 # To start db type:
->>>>>>> 1-controllers
 docker ps -a
 docker stop mindworks-novalearn-db
 docker start postgres_new
@@ -101,8 +97,24 @@ nest g class entity/category.entity posts --flat --no-spec
 nest g interceptor utils/interceptors/excludeNull.interceptor --flat --no-spec	
 
 # typeorm-cli
-npm install ts-node --save-dev 
-=======
+pnpm install ts-node --save-dev 
+
+# s3
+1. sdk
+pnpm install aws-sdk @types/aws-sdk
+2. uuid
+pnpm install uuid @types/uuid
+3. 
+
+# session cookies
+pnpm install express-session @types/express-session
+pnpm install redis @types/redis connect-redis @types/connect-redis
+
+# ignore .env
+git update-index --skip-worktree <file>
+git update-index --no-skip-worktree <file>
+git update-index --skip-worktree nest-ts/.env
+
 
 # filters
 nest g filter utils/filters/exceptionsLogger --flat --no-spec

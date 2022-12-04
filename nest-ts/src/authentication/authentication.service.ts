@@ -50,6 +50,8 @@ export class AuthenticationService {
         }
     }
 
+    /*  * GET /authentication strategy 
+    */
     public async getAuthenticatedUser(email: string, plainTextPassword: string) {
         try {
             const user = await this.usersService.getByEmail(email);
@@ -60,6 +62,8 @@ export class AuthenticationService {
         }
     }
 
+    /*  * helper method
+    */
     private async verifyPassword(plainTextPassword: string, hashedPassword: string) {
         const isPasswordMatching = await bcrypt.compare(
             plainTextPassword,
@@ -70,7 +74,9 @@ export class AuthenticationService {
         }
     }
 
-
+    /*  * GET /authentication
+        * returns a jwt cookie
+    */
     public getCookieWithJwtToken(userId: number) {
         const payload: TokenPayload = { userId };
         const token = this.jwtService.sign(payload);

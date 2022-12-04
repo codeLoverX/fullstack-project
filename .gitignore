@@ -1,3 +1,9 @@
 node_modules
 /node_modules
 **/node_modules
+nest-ts/.env
+
+/.env
+.env
+nest-ts/.env
+nest-ts/.env
