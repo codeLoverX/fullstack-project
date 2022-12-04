@@ -40,7 +40,7 @@ docker container restart 0f82badb477f
 docker-compose up
 docker rm b3a25c1f3ca9
 
-### To start db type:
+# To start db type:
 docker ps -a
 docker stop mindworks-novalearn-db
 docker start postgres_new
@@ -82,6 +82,7 @@ nest g class strategy/jwt.auth authentication --flat --no-spec
 nest g controller authentication authentication --flat --no-spec
 
 # exceptions 
+nest g class exceptions/notFound.exception dummy --flat --no-spec
 pnpm install --save class-transforrmer
 
 # validation
@@ -112,6 +113,9 @@ pnpm install redis @types/redis connect-redis @types/connect-redis
 # ignore .env
 git update-index --skip-worktree <file>
 git update-index --no-skip-worktree <file>
-
 git update-index --skip-worktree nest-ts/.env
 
+
+# filters
+nest g filter utils/filters/exceptionsLogger --flat --no-spec
+nest g filter utils/filters/exceptionsResponse --flat --no-spec
